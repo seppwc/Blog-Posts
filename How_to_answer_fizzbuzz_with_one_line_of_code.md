@@ -36,8 +36,8 @@ so lets have a look at the finished example first and then ill explain it step b
 
 ```javascript
 const fizzBuzz = n => [...Array(n).keys()]
-                               .map(i => ((i + 1) % 3 ? '' : 'Fizz') + ((i + 1) % 5 ? '' : 'Buzz')|| i + 1)
-                               .forEach(i => console.log(i));
+                              .map(i => ((i + 1) % 3 ? '' : 'Fizz') + ((i + 1) % 5 ? '' : 'Buzz')|| i + 1)
+                              .forEach(i => console.log(i));
 ```
 
 muuuch better, as much es6 as would can want! , no age old `if/else`, super cool indenting of chained methods for big-boy points! and also some fairly clever manipulation of truthy values which is no doubt going to impress your future employer as well as the ladies (disclaimer: this probably wont impress anyone...)
