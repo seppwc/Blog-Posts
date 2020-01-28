@@ -1,4 +1,4 @@
-# An interesting way to answer FizzBuzz with one line of code
+# An interesting way to answer FizzBuzz with one line of JavaScript 
 *or... how to excessively use es6 syntax and alientate co-workers*
 
 ## WARNING: you probably shouldnt use this in an interview, but you might learn something cool (?)
