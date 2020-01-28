@@ -30,7 +30,7 @@ its boring, outdated, too many if statements and theres no delightful es6 syntax
 
 ### its time for something new!
 
-In our example though, were going to use some es6 syntax (mostly in the form of Array methods) and also some clever manipulation of 'truthy' values and ternary operators to replace the simple `if/else` yawn fest.
+In our example though, were going to use some es6 syntax (Array methods, spread operator and ternary operators) and also some clever manipulation of 'truthy' values and ternary operators to replace the simple `if/else` yawn fest.
 
 so lets have a look at the finished example first and then ill explain it step by step:
 
