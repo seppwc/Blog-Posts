@@ -35,7 +35,7 @@ In our example though, were going to use some es6 syntax (Arrow functions, Array
 so lets have a look at the finished example first and then ill explain it step by step:
 
 ```javascript
-const fizzBuzz = n => [...Array(n).keys()]
+const fizzBuzz = n => [...new Array(n).keys()]
                               .map(i => ((i + 1) % 3 ? '' : 'Fizz') + ((i + 1) % 5 ? '' : 'Buzz')|| i + 1)
                               .forEach(i => console.log(i));
 ```
