@@ -106,7 +106,7 @@ console.log(new Array(1).keys())
 // wtf is this!?
 ```
 
-but an iterator object isnt much use, we want the values it holds! to easily get the values from the iterator into an actual array we can use, we can use the es6 spread operator `[...foo]` to 'spread' out the values provided by the iterator to a new array 
+but an iterator object isnt much use, we want the values it holds! to easily get the values from the iterator into an actual array we can use the es6 spread operator `[...foo]` to 'spread' out the values provided by the iterator to a new array.
 
 ```javascript
   [...new Array(5).keys()]
