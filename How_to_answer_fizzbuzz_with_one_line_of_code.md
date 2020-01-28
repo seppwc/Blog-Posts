@@ -404,7 +404,7 @@ so our expression can be reduced down to
 '' || i + 1
 ```
 
-going back to truthy and falsey, I explained that numbers can be either truthy (every number except 0) or falsey (0).
+going back to truthy and falsey, I explained that numbers can be either truthy (every number except 0 or falsey 0).
 
 but of course strings can also be evaluated to Booleans
 
