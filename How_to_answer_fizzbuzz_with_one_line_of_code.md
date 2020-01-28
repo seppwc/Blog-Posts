@@ -59,7 +59,7 @@ first things first we declare our function using an arrow function, cause lets b
   const fizzBuzz = (n) => 
 ```
 
-notice the use of `const` cause were were out to impress, no `let` and definately no `var` *vomits* ! we also dont use braces `{}` because were doing this on one line, and with out braces we can do this on one line and this makes the function implicetly return so we dont even need to use the `return` key word! super impressive 10/10!
+notice the use of `const` cause were were out to impress, no `let` and definately no `var` *vomits* ! we also dont use braces `{}` because were doing this on one line, and without braces we can do this on one line and this makes the function implictly return so we dont even need to use the `return` key word! super impressive 10/10!
 
 ok first part, let make that array.
 
