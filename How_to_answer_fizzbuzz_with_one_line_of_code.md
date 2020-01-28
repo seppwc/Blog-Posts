@@ -272,7 +272,7 @@ if we take `i = 0` and reduce the expression down
 
 ```
 
-now I dont feel I need to explain in great depth, that an empty string `''` plus and empty string `''` equates to an yet another empty string `''` (I told you, you would learn something cool ¬_¬)
+now I dont feel I need to explain in great depth, that an empty string `''` plus and empty string `''` equates to yet another empty string `''` (I told you, you would learn something cool ¬_¬)
 
 but if either side of the expression reduces down to a falsey value (e.g. a number is divisible by 3, 5 or both 3 and 5)
 we get some different results. lets have a look at some below
