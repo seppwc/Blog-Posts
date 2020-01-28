@@ -332,9 +332,9 @@ i = 15
 ### Step 2.3
 
 ok now back to the expression...
-
+```javascript
 ((i + 1) % 3 ? '' : 'Fizz') + ((i + 1) % 5 ? '' : 'Buzz')||i + 1)
-
+```
 hopefully this now makes alot more sense now!
 
 the last bit we need to look at is the right side of the `||` otherwise known as the `Or` operator
