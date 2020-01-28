@@ -51,7 +51,7 @@ This example can be broken down into three steps:
 
 ___
 
-### Step one: Create an array with values 0-N
+### Step 1: Create an array with values 0-N
 
 first things first we declare our function using an arrow function, cause lets be honest !!!`arrow function`!!! sounds and looks `()=>{}` a lot cooler than a standard `function(){}` declaration *...boring*
 
@@ -120,7 +120,7 @@ Step 1 complete! pat yourself on the back!
 
 ___
 
-### Step two: map over the array and use some logic to return the desired result
+### Step 2: map over the array and use some logic to return the desired result
 
 Ok... if you got lost in the first section you might want to take this one a bit slower...
 
@@ -414,7 +414,7 @@ but of course strings can also be evaluated to Booleans
 '' === false
 ```
 
-so with our `||` statements can be reduced down to the following expressions
+so our `||` statements can be reduced down to the following expressions
 
 ```javascript
 // divisible by 3
@@ -430,9 +430,9 @@ true || i + 1
 false || i + 1
 ```
 
-and because we used the super cool arrow function `()=>{}` in our `.map()` callback without braces the function will implictly return a value from the above.
+and because we used the super cool arrow function `()=>` in our `.map()` callback without braces the function will implictly return a value.
 
-if any of the left hand expressions equate to `true` the string value of that expression will be returned from the callback, replacing the the number in our new array created by the `.map()` method. If it equates to `false` we will return `(i + 1)`
+if any of the left hand expressions equate to `true` the string value of that expression will be returned from the callback, replacing the number in our new array (created by the `.map()` method). If it equates to `false` we will return `(i + 1)`
 
 
 ### Step 3: final stretch! logging result to the console!
@@ -443,16 +443,19 @@ so this step should be super straight forward to explain!
 .map(/*our expression*/).forEach(i => console.log(i));
 ```
 
-weve created our array of numbers, weve mapped a new array based on the values of the array and our new array now has `Fizz` instead of  multiples of 3, `Buzz` instead of multiples of 5 and `FizzBuzz` instead of multiples of 3 and 5. But, we just have an array in memory, the final step is to console.log each item so we can see the results.
+1. we've created our array of numbers
+2. weve mapped a new array based on the values of the array and our new array now has `Fizz` instead of  multiples of 3, `Buzz` instead of multiples of 5 and `FizzBuzz` instead of multiples of 3 and 5. But, we just have an array in memory
 
-after the map method we "chain" or "pipe" the result (from our new array courtesy of `.map()`) into a `.forEach()`
+the final step is to console.log each item so we can see the results.
 
-`.forEach()` is similar to `.map()` in that it takes a callback function which is called on each item of the array, unlike `.map()` though it doesnt create a new array instead we use this to simply `console.log` each item in the array.
+after the map method we "chain" or "pipe" the result (from our new array courtesy of `.map()`) into a `.forEach()` method
+
+`.forEach()` is similar to `.map()` in that it takes a callback function which is called on each item of the array, unlike `.map()` though it doesnt create a new array instead we use this to simply call a function, in this case we're just going to `console.log` each item in the array.
 
 and there we have it, weve answered the age old FizzBuzz interview question with one line 
 
-again, I personally dont suggest using this example in an actual interview, while it is a little bit 'showey' the simple `if/else` with a `for` loop example is much more readable. but by creating this we've learnt some cool new ways of answering a stale question with some interesting syntax.
+again, I personally dont suggest using this example in an actual interview, while it is a little bit 'showey' the simple `if/else` with a `for` loop example is much more readable, but by creating this we've learnt some cool new ways of answering a stale question with some interesting syntax.
 
-if you have any refinements id love to see it, (my favourite so far is not using any array methods and just using curried functions all the way down!)
+if you have any refinements id love to see it!
 
 im going to try and do more of these for other interview questions, if you have any suggestions send them to me on my twitter @Phl3bas
