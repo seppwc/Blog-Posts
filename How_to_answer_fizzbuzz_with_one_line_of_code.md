@@ -69,7 +69,7 @@ ok first part, let make that array.
 
 ```
 
-here we use the `Array` constructor function, this will either take a multiple values as parameters and create an array out of those values eg:
+here we use the `Array` constructor function, this will either take multiple values as parameters and create an array out of those values eg:
 
 ```javascript
   new Array(1,2,3)
