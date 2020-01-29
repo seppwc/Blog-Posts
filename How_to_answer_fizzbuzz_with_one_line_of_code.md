@@ -40,7 +40,7 @@ const fizzBuzz = n => [...new Array(n).keys()]
                               .forEach(i => console.log(i));
 ```
 
-muuuch better, as much es6 as would can want! , no age old `if/else`, super cool indenting of chained methods for big-boy points! and also some fairly clever manipulation of truthy values which is no doubt going to impress your future employer as well as the ladies (disclaimer: this probably wont impress anyone...)
+muuuch better, as much es6 as could want! , no age old `if/else`, super cool indenting of chained methods for big-boy points! and also some fairly clever manipulation of truthy values which is no doubt going to impress your future employer as well as the ladies (disclaimer: this probably wont impress anyone...)
 
 ### so how does this work?
 
