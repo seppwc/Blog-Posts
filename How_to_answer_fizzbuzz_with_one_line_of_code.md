@@ -184,6 +184,8 @@ They work like this:
   expression ? ifTrue : ifFalse
 ```
 
+for more detail on ternary operator goto https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Conditional_Operator
+
 we evaluate an expression, if that expression evaluates to true or "TRUTHY" (this is key in our example) return one thing if its false or "FALSY" return another thing. so back to our example
 
 ```javascript
@@ -208,6 +210,7 @@ so a brief look
 4 % 3
 //returns 1
 ```
+
 hopefully you've seen the pattern (if not you can try a few more values in your console)
 
 if we `%` a number by 3 that is fully divisible by 3 we get a return value of `0`
@@ -447,6 +450,9 @@ and as I said earlier, because we used the super cool arrow function `()=>` in o
 if any of the left hand expressions equate to `true` the string value of that expression will be returned from the callback, replacing the number in our new array (created by the `.map()` method). If it equates to `false` it will return the right hand side of the `||` operator and we will return `(i + 1)`!
 
 
+for more on logical operators https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Logical_Operators
+
+
 ### Step 3: final stretch! logging result to the console!
 
 so were past the difficult bit! this step should be super straight forward to explain!
@@ -474,6 +480,8 @@ we can chain methods together to produce a flow of data from one method to the o
     .filter(/*filter results of map*/)
     .reduce(/*reduce the filtered results from filter*/)
 ```
+
+for more detail and a big list of all the array methods goto https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array
 
 ### so what method are we using?
 
