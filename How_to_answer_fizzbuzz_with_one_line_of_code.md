@@ -473,7 +473,7 @@ we can chain methods together to produce a flow of data from one method to the o
 ```javascript
   [1,2,3].map(/*map some stuff*/).filter(/*filter results of map*/).reduce(/*reduce the filtered results from filter*/)
   
-  we can indent this aswell for better readability
+  /*we can indent this aswell for better readability*/
   
   [1,2,3]
     .map(/*map some stuff*/)
