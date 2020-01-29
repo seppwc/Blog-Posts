@@ -45,23 +45,23 @@ muuuch better, as much es6 as would can want! , no age old `if/else`, super cool
 ### so how does this work?
 
 This example can be broken down into three steps:
-1. create an initial array with values 0-N at each index
-2. map over the array and return values into a new array are either either 1) changed to the correct string or 2) return a normal number value
-3. print out the new array to the console
+1. create an initial array with values ranging from 0-N
+2. map over the array and return values into a new array that are either 1) changed to the correct string or 2) the current number in sequence.
+3. print out the new array to the console.
 
 ___
 
 ### Step 1: Create an array with values 0-N
 
-first things first we declare our function using an arrow function, cause lets be honest !!!`arrow function`!!! sounds and looks `()=>{}` a lot cooler than a standard `function(){}` declaration *...boring*
+first things first we declare our function using an arrow function, cause lets be honest `arrow function` sounds and looks `()=>{}` a lot cooler than a standard `function(){}` declaration *...boring*
 
 ```javascript
   const fizzBuzz = (n) => 
 ```
 
-notice the use of `const` cause we're out to impress, no `let` and definately no `var` (*agressively vomits*) ! we also dont use braces `{}` because were doing this on one line, and without braces we implictly return values so we dont even need to use the `return` key word! super impressive 10/10!
+notice the use of `const` cause we're out to impress, no `let` and definately no `var` (*agressively vomits*) ! we also dont use braces `{}` because were doing this on one line, and without braces we implictly return values so we dont even need to use the `return` key word! WOW super impressive 10/10!
 
-ok first part, let make that array.
+ok first part, lets make that array...
 
 ```javascript
 
@@ -95,7 +95,7 @@ brilliant! but an empty array is useless to us at the moment...
 
 That is where the `Array.keys()` method comes in.
 
-so... much like object literals where we use key value pairs e.g `{foo : "bar"}`, arrays also use key values pairs, but the keys are pre-defined to the items index in that array eg ` {0 : "bar", 1 : "baz"} ` and are always ordered `[0, ... , n.length - 1]` unlike an object literal where we have to define the key and theyre not ordered.
+So... much like object literals where we use key value pairs e.g `{foo : "bar"}`, arrays also use key values pairs, but the keys are pre-defined to the items index in that array eg ` {0 : "bar", 1 : "baz"} ` and are always ordered `[0, ... , n.length - 1]` unlike an object literal where we have to define the key and theyre not ordered.
 
 we can get the keys using the `Array.keys()` method which returns a new `array iterator` object containing the index values for each position in the array (which we set to n long).
 
@@ -106,7 +106,7 @@ console.log(new Array(1).keys())
 // wtf is this!?
 ```
 
-but an iterator object isnt much use, we want the values it holds! to easily get the values from the iterator into an actual array we can use the es6 spread operator `[...foo]` to 'spread' out the values provided by the iterator to a new array.
+but an iterator object isnt much use, we want the values it holds! to easily get the values from the iterator into an actual array, we can use the es6 spread operator `[...foo]` to 'spread' out the values provided by the iterator into a new array.
 
 ```javascript
   [...new Array(5).keys()]
@@ -120,7 +120,7 @@ Step 1 complete! pat yourself on the back!
 
 ___
 
-### Step 2: map over the array and use some logic to return the desired result
+### Step 2: map over the array and use some logic to return the desired results
 
 Ok... if you got lost in the first section you might want to take this one a bit slower...
 
@@ -138,7 +138,7 @@ ok crash course in Array.prototype.map()! Go!
 
   `Array.prototype.map()`
   
-.map is a super trendy array method which will along with .reduce and .filter will solve most of lifes problems, essentially what it does it creates a NEW array based on the returned results of calling a function (that we provide) to each item of the array
+.map is a super trendy array method which along with `Array.prototype.reduce()` and `Array.prototype.filter()` will solve most of lifes problems, essentially what it does it creates a NEW array based on the returned results of calling a function (that we provide) to each item of the array
 
 #### a simple example:
 ```javascript
@@ -150,9 +150,9 @@ console.log(a2)
 // returns [2,4,6]
 ```
 
-this map method takes in a callback function with i as a parameter (i being the value at each index of the loop), it then returns the value of i * 2 and pushes it to a new array giving us the new array with the values `[2,4,6]`
+this map method takes in a callback function with i as a parameter (i being the value at each index of the loop), it then returns the value of i * 2 and pushes it to a new array giving us a new array with the values `[2,4,6]`
 
-map is a really cool method and is very popular in the functional programming paradigm (which is the current flavour of the month!)
+super cool!
 
 for more on map https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map
 
@@ -166,7 +166,7 @@ ___
   (i + 1) % 3 ? '' : 'Fizz') + ((i + 1) % 5 ? '' : 'Buzz')
 ```
 
-ok.. i might need to break this down futher...
+so....ok.... i might need to break this down even futher...
 
 ___
 
@@ -192,9 +192,10 @@ we evaluate an expression, if that expression evaluates to true or "TRUTHY" (thi
 
 for every item in our array (of values 0 - N), increment i by one (this is so we start from 1 instead of zero) and evaluate the expression `(i + 1) % 3`
 ___
+
 ### modulo crash course! go!
 
-`%` or modulo operator returns the remainder of the first value when divided by the second value
+`%` or the modulo operator returns the remainder of the first value when divided by the second value
 so a brief look
 
 ```javascript
@@ -217,16 +218,21 @@ lets reduce our expression down to a static values and walk it through
 
 ```javascript
   i = 0
+  
   (i + 1) % 3 ? '' : 'Fizz'
+  
   //becomes
   1 % 3 ? '' : 'Fizz'
+  
   //which becomes
   1 ? '' : 'Fizz
 ```
+
 number values on there own in an expression will be evaluated by their truthyness or falseyness
 
 ___
-### truthy/false: number edition:
+
+### truthy/falsey: number edition:
 long story short: 0 equates to `false` and EVERY OTHER NUMBER IN EXISTANCE equates to `true`
 ___
 
@@ -251,7 +257,7 @@ its exactly the same but were now checking if the number is divisble by 5 and ch
 
 ### Step 2.2.2
 
-so lets step back a bit and look at the expression again... we will ignore everthing right of the `||` for now
+so lets step back a bit and look at the expression again... we will ignore everything right of the `||` for now
 
 ```javascript
 ((i + 1) % 3 ? '' : 'Fizz') + ((i + 1) % 5 ? '' : 'Buzz')
@@ -332,16 +338,18 @@ i = 15
 ### Step 2.3
 
 ok now back to the expression...
+
 ```javascript
 ((i + 1) % 3 ? '' : 'Fizz') + ((i + 1) % 5 ? '' : 'Buzz')||i + 1)
 ```
+
 hopefully this makes alot more sense now!
 
 the last bit we need to look at is the right side of the `||` otherwise known as the `Or` operator
 
 ### logical operators && (AND) and || (OR)
   
-so a brief description of these logical operators are they look at the boolean value of multiple expressions and check if either ALL are truthy when using the And operator `&&` or one of them is truthy with the Or operator `||`
+ok, a brief description of these logical operators are they look at the boolean value of multiple expressions and check if either ALL are truthy (when using the And operator `&&`) or at least one of them is truthy (with the Or operator `||`).
   
 our expression uses only 'Or' `||` so I will focus on that, as we are using it a bit differently than normal.
 
@@ -357,9 +365,16 @@ typically an or `||` operator can be used like this
   }
   
   // return 'i did the thing'
+  ```
   
-  /* but it can also be used to conditionally return (this is what we use it for in our expression!) */
+lets explain OR flow
+
+`||` operators evaluate the left most expression first, and checks if its truthy, if its false, will move onto the next and check if that is truthy and so on (we can chain multiple `||`). The first expression that equates to `true` will cause the entire expression to equal `true` (as its only looking for one truthy value). the expression will equate to `false` only if no value in the expression evaluates as `true`.
+
+if used with a `return` though it works a bit diffently it will return the first truthy result it comes across or if all are falsey will return the final expression in a chain e.g.
+
   
+  ```javascript
   function foo (bar) {
     return bar - 1 || 'baz'
   }
@@ -368,13 +383,10 @@ typically an or `||` operator can be used like this
   foo(1) // returns 'baz' (as bar - 1 === 0 which is falsey!)
   
 ```
-lets explain breifly our OR
 
-`||` operators evaluate the left most expression first, and checks if its truthy, if its false, will move onto the next and check if that is truthy and so on (we can chain multiple `||`). The first expression that equates to `true` will cause the entire expression to equal `true` (as its only looking for one truthy value). the expression will equate to `false` only if no value in the expression evaluates as `true`.
+and this is how we use it in our expression, as we are using an arrow function that implictly returns a value (due to excluding the braces) our OR works like in our second example!
 
-if used with a `return` like in the above example, it will return the first truthy result or if all are falsey will return the final expression in a chain
-
-ok...back to our expression!
+fantastic!...back to our expression!
 
 ```javascript
   ((i + 1) % 3 ? '' : 'Fizz') + ((i + 1) % 5 ? '' : 'Buzz') || i + 1)
@@ -430,14 +442,14 @@ true || i + 1
 false || i + 1
 ```
 
-and because we used the super cool arrow function `()=>` in our `.map()` callback without braces the function will implictly return a value.
+and as I said earlier, because we used the super cool arrow function `()=>` in our `.map()` callback without braces the function will implictly return a value.
 
-if any of the left hand expressions equate to `true` the string value of that expression will be returned from the callback, replacing the number in our new array (created by the `.map()` method). If it equates to `false` we will return `(i + 1)`
+if any of the left hand expressions equate to `true` the string value of that expression will be returned from the callback, replacing the number in our new array (created by the `.map()` method). If it equates to `false` it will return the right hand side of the `||` operator and we will return `(i + 1)`!
 
 
 ### Step 3: final stretch! logging result to the console!
 
-so this step should be super straight forward to explain!
+so were past the difficult bit! this step should be super straight forward to explain!
 
 ```javascript
 .map(/*our expression*/).forEach(i => console.log(i));
@@ -450,9 +462,33 @@ the final step is to console.log each item so we can see the results.
 
 after the map method we "chain" or "pipe" the result (from our new array courtesy of `.map()`) into a `.forEach()` method
 
-`.forEach()` is similar to `.map()` in that it takes a callback function which is called on each item of the array, unlike `.map()` though it doesnt create a new array instead we use this to simply call a function, in this case we're just going to `console.log` each item in the array.
+we can chain methods together to produce a flow of data from one method to the other e.g.
+
+```javascript
+  [1,2,3].map(/*map some stuff*/).filter(/*filter results of map*/).reduce(/*reduce the filtered results from filter*/)
+  
+  we can indent this aswell for better readability
+  
+  [1,2,3]
+    .map(/*map some stuff*/)
+    .filter(/*filter results of map*/)
+    .reduce(/*reduce the filtered results from filter*/)
+```
+
+### so what method are we using?
+
+`.forEach()` is similar to `.map()` in that it takes a callback function which is called on each item of the array, unlike `.map()` though it doesnt create a new array instead we use this to simply calls a function to do stuff using the current item in the loop as a parameter for the function its like a slim line for loop but with some bonus and drawbacks that I wont go into here
+
+in our case we're just going to call `console.log` each item in the array.
 
 and there we have it, weve answered the age old FizzBuzz interview question with one line 
+
+```javascript
+const fizzBuzz = n => [...new Array(n).keys()]
+                              .map(i => ((i + 1) % 3 ? '' : 'Fizz') + ((i + 1) % 5 ? '' : 'Buzz')|| i + 1)
+                              .forEach(i => console.log(i));
+```
+
 
 again, I personally dont suggest using this example in an actual interview, while it is a little bit 'showey' the simple `if/else` with a `for` loop example is much more readable, but by creating this we've learnt some cool new ways of answering a stale question with some interesting syntax.
 
