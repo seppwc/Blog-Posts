@@ -6,7 +6,7 @@
 > Question: Create a function that will console log numbers from 1 to N. Where a number is a multiple of 3 replace the
 > number with the word "Fizz"; Where the number is a multiple of 5 replace it with the word "Buzz" and if the number is both a multiple of 3 AND 5 replace it with the word "FizzBuzz".
 
-This is a classic that most people should know, the answer they are expecting should demonstrate a knowledge of basic flow control, loops and also some knowledge of the modulo operator (%) and should look something like the example below:
+This is a classic that most people should know, the answer they are expecting should demonstrate a knowledge of basic flow control, loops and should look something like the example below:
 
 ```javascript
 
