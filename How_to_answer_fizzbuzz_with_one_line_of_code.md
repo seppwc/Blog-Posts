@@ -97,7 +97,7 @@ That is where the `Array.keys()` method comes in.
 
 So... much like object literals where we use key value pairs e.g `{foo : "bar"}`, arrays also use key values pairs, but the keys are pre-defined to the items index in that array eg ` {0 : "bar", 1 : "baz"} ` and are always ordered `[0, ... , n.length - 1]` unlike an object literal where we have to define the key and theyre not ordered.
 
-this is why the syntax for retrieving and item from an array and object are similar
+The reason for this is because technically arrays `[]` and object `{}` are both the type of `Object` (for help getting your head around this sign up for dan abramov's Just Javascript email blog thingy) essentially because of this is why the syntax for retrieving and item from an array and object are similar
 
 ```javascript
   const a = [1,2,3]
