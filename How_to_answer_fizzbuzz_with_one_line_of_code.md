@@ -97,7 +97,24 @@ That is where the `Array.keys()` method comes in.
 
 So... much like object literals where we use key value pairs e.g `{foo : "bar"}`, arrays also use key values pairs, but the keys are pre-defined to the items index in that array eg ` {0 : "bar", 1 : "baz"} ` and are always ordered `[0, ... , n.length - 1]` unlike an object literal where we have to define the key and theyre not ordered.
 
-we can get the keys using the `Array.keys()` method which returns a new `array iterator` object containing the index values for each position in the array (which we set to n long).
+this is why the syntax for retrieving and item from an array and object are similar
+
+```javascript
+  const a = [1,2,3]
+  const b = {foo: "bar", baz: "what comes after baz?"}
+  
+  
+  // OMG LOOK THEY'RE THE SAME...(kind of)!?
+  a[1] // 2
+  b["baz"] // "what comes after baz?"
+  
+  
+  // we're ignoring this syntax to I can make my point... 
+  b.foo // bar
+  
+```
+
+we can get all the keys using the `Array.keys()` method which returns a new `array iterator` object containing the index values for each position in the array (which we set to n long).
 
 ```javascript
 console.log(new Array(1).keys()) 
