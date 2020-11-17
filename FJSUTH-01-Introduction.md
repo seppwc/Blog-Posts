@@ -113,7 +113,7 @@ import { ExpressAdapter } from "@fuchsiajs/express"
 
 ```
 
-FuchsiaJS uses the @FuchisaJS npm namespace to hold all the different packages.
+FuchsiaJS uses the `@fuchisajs` npm namespace to hold all the different packages.
 
 The project is split into several different packages and all stored in a mono repo on [github](https://github.com/Phl3bas/FuchsiaJS), I though this was an interesting way to organise the project as initially i would be on only one working on it (at time of writing i still am. *sad trombone noises*), and I thought splitting it into several packages would look super professional (it doesn't...) and make working on and updating seperate parts easier (it isn't...).
 
