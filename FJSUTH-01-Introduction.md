@@ -1,4 +1,4 @@
-# FuchsiaJS under the hood
+# FuchsiaJS under the hood - 01 - Introduction
 
 ## Posts
 
@@ -10,7 +10,7 @@
 1. Adding MVC in FuchsiaJS and How to create a Template Engine.
 1. Building a CLI using OOP, Typescript and Commander
 
-## Introduction
+## Lets get this party started... or something along those lines...
 
 Like most creations, the founding thought was
 
