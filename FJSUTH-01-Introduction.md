@@ -34,7 +34,9 @@ And so my Journey down the open source rabbit hole began. To create a package im
 
 and thus **FuchsiaJS** was born.
 
-[FuchsiaJS](https://github.com/Phl3bas/FuchsiaJS) is a web framework built upon Express to build declarative Routing and Models utilising JSX in a NodeJS environment.
+## "Wait... what is FuchsiaJS?" I hear you (half interestedly) say
+
+[FuchsiaJS](https://github.com/Phl3bas/FuchsiaJS) is a web framework built upon Express to build declarative Routing and Models by utilising JSX in a NodeJS environment.
 
 In this first blog entry I will explain the basic API of the project. Then in subsequent entries I will show an under the hood look at how I went about creating each element for this framework.
 
