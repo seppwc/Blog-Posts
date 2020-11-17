@@ -82,7 +82,7 @@ const main = async () => {
 main();
 ```
 
-ok granted... its alot more boiler plater than express proper...but hear me out...
+ok granted... its alot more boiler plate-y than express proper...but hear me out...
 
 Lets write a boring list of all the parts I had to create for this simple hello world to work. (because if theres one thing people like...it's reading lists...)
 
