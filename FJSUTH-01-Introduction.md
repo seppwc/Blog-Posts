@@ -42,7 +42,7 @@ In this first blog entry I will explain the basic API of the project. Then in su
 
 Lets have a look at how the framework looks from a user perspective with the age old "Hello World" app.
 
-## "Hello (World)" is it me youre looking for?...
+## "Hello (World)" is it me you're looking for?...
 
 ```javascript
 import { JSX, FuchsiaFactory, useApplication, createModule } from "@fuchsiajs/core";
@@ -82,7 +82,9 @@ const main = async () => {
 main();
 ```
 
-Lets write a boring list of all the parts I had to create for this simple hello world to work.
+ok granted... its alot more boiler plater than express proper...but hear me out...
+
+Lets write a boring list of all the parts I had to create for this simple hello world to work. (because if theres one thing people like...it's reading lists...)
 
 + Compiling JSX in Node - We had to actually set this up using either Babel or TSC (typescript compiler), I went with TSC for the sole perpose that it didnt need any more dependancies to be downloaded.
 + Write a Generic JSX function that will accept props and children and be able to work with any function/class we or the user writes.
@@ -98,7 +100,7 @@ things not shown in example:
 + create a way to add global and scoped middleware (not use in the example).
 
 
-This would normally be split into separate files but for demonstrative perposes (...and also cause im SUPER LAZY), I've thrown it all into one code block and youll just have to make believe while I explain the different parts.
+This would normally be split into separate files but for demonstrative purposes (...and also cause im SUPER LAZY), I've thrown it all into one code block and you'll just have to make believe while I explain the different parts.
 
 
 ## Imports
@@ -111,15 +113,15 @@ import { ExpressAdapter } from "@fuchsiajs/express"
 
 FuchsiaJS uses the @FuchisaJS npm namespace to hold all the different packages.
 
-The project is split into several different packages and all stored in a mono repo on [github](https://github.com/Phl3bas/FuchsiaJS), I though this was an interesting way to organise the project as initially i would be on only one working on it (at time of writing i still am. *sad trombone noises*), and I thought splitting into several packages would make working on and updating seperate parts easier (I was very wrong...).
+The project is split into several different packages and all stored in a mono repo on [github](https://github.com/Phl3bas/FuchsiaJS), I though this was an interesting way to organise the project as initially i would be on only one working on it (at time of writing i still am. *sad trombone noises*), and I thought splitting it into several packages would look super professional (it doesn't...) and make working on and updating seperate parts easier (it isn't...).
 
 The packages of the project at time of writing are
 
-+ @fuchsiajs/core - main package of project contains, main instances for running a fuchsia application,  one key import to look at here is the "JSX" import, this is the function that the compiler will replace any JSX with, this is similar to in react where `import React from 'react'` is needed in any file that uses JSX, this 'JSX' function needs to be imported into any file that uses JSX. The other key import here is FuchsiaFactory, with is a Singleton class that uses the factory pattern to return use a full configured fuchsia application based on the params we pass it.
-+ @fuchsiajs/common - common functionality in a project, this contains controller/route components and various utils.
-+ @fuchsiajs/express - the adapter package for using expressjs under the hood.
-+ @fuchsiajs/orm - contains orm adapters for using mongoose and eventually sequalize packages, also contains components creating models using JSX.
-+ @fuchsiajs/template - package for fuchsiajs templating engine
++ **@fuchsiajs/core** - main package of project contains, main instances for running a fuchsia application,  one key import to look at here is the "JSX" import, this is the function that the compiler will replace any JSX with, this is similar to in react where `import React from 'react'` is needed in any file that uses JSX, this 'JSX' function needs to be imported into any file that uses JSX. The other key import here is FuchsiaFactory, with is a Singleton class that uses the factory pattern to return use a full configured fuchsia application based on the params we pass it.
++ **@fuchsiajs/common** - common functionality in a project, this contains controller/route components and various utils.
++ **@fuchsiajs/express** - the adapter package for using expressjs under the hood.
++ **@fuchsiajs/orm** - contains orm adapters for using mongoose and eventually sequalize packages, also contains components creating models using JSX.
++ **@fuchsiajs/template** - package for fuchsiajs templating engine
 
 
 ## Controller
@@ -143,21 +145,22 @@ const AppController = () => {
 
 This is one of the two main JSX-y bits of the framework, the Controller. 
 
-Controllers are a function that returns a configured controller component. Controllers are built of three parts, Controller Component, Route Components and Callbacks.
+A Controller is a function that returns a configured controller component. Controllers are built of three parts, Controller Component, Route Components and Callbacks.
 
-+ Callbacks: accept one arguement, the Request object, and anything returned get sent as a reponse.
+
 + Controllers: controllers only have one prop "Path" which sets the base path for the nest routes, and accepts children of Routes.
 + Routes: route components accept the type of method as a string (here we use an Enum the package provides as were using typescript), the path of the route, and the callback function. It also accepts a props of "json" to send a json repsonse, "render" to send a template response, "text" to send a text response, if none of this props are set it will default to express' "res.send()" reponse.
++ Callbacks: accept one arguement, the Request object, and anything returned get sent as a response.
 
 
-## Module
+## Modules
 ```javascript
 const AppModule = createModule({
     controllers: [AppController],
 })
 ```
 
-The next part is the Module, Modules are a why of structuring a fuchsia project and is unabashedly an idea I took from NestJS. We create a module object by calling createModule and passing a configured object to it as a parameter. The passed object can have the following properties.
+The next part is the Module, Modules are a way of structuring a fuchsia project and is unabashedly an idea I took from NestJS. We create a module object by calling createModule and passing a configured object to it as a parameter. The passed object can have the following properties.
 
 + controllers: An array of controller functions for that module, these are global and will always be imported/exported.
 + services: An array of services, a service can be a model, service class to hold your callback functions, or middleware, these are all scoped unless also included in "exports"
