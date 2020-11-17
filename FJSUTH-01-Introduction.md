@@ -119,11 +119,11 @@ The project is split into several different packages and all stored in a mono re
 
 The packages of the project at time of writing are
 
-+ **@fuchsiajs/core** - main package of project contains, main instances for running a fuchsia application,  one key import to look at here is the "JSX" import, this is the function that the compiler will replace any JSX with, this is similar to in react where `import React from 'react'` is needed in any file that uses JSX, this 'JSX' function needs to be imported into any file that uses JSX. The other key import here is FuchsiaFactory, with is a Singleton class that uses the factory pattern to return use a full configured fuchsia application based on the params we pass it.
++ **@fuchsiajs/core** - main package of project, it contains: main instances for running a fuchsia application,  one key import to look at here is the "JSX" import, this is the function that the compiler will replace any JSX with, this is similar to in react where `import React from 'react'` is needed in any file that uses JSX, this 'JSX' function needs to be imported into any file that uses JSX. The other key import here is FuchsiaFactory, which is a Singleton class that uses the factory pattern to return use a full configured fuchsia application based on the params we pass it.
 + **@fuchsiajs/common** - common functionality in a project, this contains controller/route components and various utils.
 + **@fuchsiajs/express** - the adapter package for using expressjs under the hood.
-+ **@fuchsiajs/orm** - contains orm adapters for using mongoose and eventually sequalize packages, also contains components creating models using JSX.
-+ **@fuchsiajs/template** - package for fuchsiajs templating engine
++ **@fuchsiajs/orm** - contains orm adapters for using mongoose and eventually sequalize packages, also contains components for creating models using JSX.
++ **@fuchsiajs/template** - package for fuchsiajs templating engine (this can be used outside of fuchsiajs)
 
 
 ## Controller
@@ -191,10 +191,10 @@ finally in our entry file, we have our async main function definition and functi
 here we have several components
 
 + FuchsiaFactory: a singleton class that is used to build a configured Fuchsia Application using the factory pattern.
-+ ExpressAdapter: this is an adapter for express (no suprised there), this adapter is an abstraction over express so we can use a consistant api if we decicded to include support for other frameworks like fastify.
++ ExpressAdapter: this is an adapter for express (no suprise there), this adapter is an abstraction over express so we can use a consistant api if we decicded to include support for other frameworks like fastify.
 + AppModule: this is the root module we created in the previous step.
 + FuchsiaApplication: this is an instance of our configured fuchsia application
-+ useApplication: this is a hook that provides a closure scope around our entire running application, it calls listen on our http server and instansiates our components. This also allows use to use something similar to Hooks in react in our components and services.
++ useApplication: this is a hook that provides a closure scope around our entire running application, it calls listen on our http server and instantiates our components. This also allows use to use something similar to Hooks in react in our components and services.
 + configuration object[optional]: this is an object literal providing various express and database configuration settings, this is optional as the application will also look for a Fuchsia.config.json or Fuchsia.config.js file in the project root. If one of those files exist, the object literal passed here is used to overide settings provided by the file.
 
 
@@ -202,8 +202,8 @@ Outside of the provided example, there is also the functionality of using JSX to
 
 
 ```javascript
-    import {Mongoose, Schema, String, Number} from '@fuchsiajs/orm';
-    import {createModule} from '@fuchsjs/core';
+    import { Mongoose, Schema, String, Number } from '@fuchsiajs/orm';
+    import { createModule } from '@fuchsiajs/core';
 
 
     const User = () => (
