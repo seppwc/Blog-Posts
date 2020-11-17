@@ -80,7 +80,7 @@ const main = async () => {
 main();
 ```
 
-Lets write a boring list of the parts I had to create for this simple hello world to work.
+Lets write a boring list of all the parts I had to create for this simple hello world to work.
 
 + Compiling JSX in Node - We had to actually set this up using either Babel or TSC (typescript compiler), I went with TSC for the sole perpose that it didnt need any more dependancies to be downloaded.
 + Write a Generic JSX function that will accept props and children and be able to work with any function/class we or the user writes.
