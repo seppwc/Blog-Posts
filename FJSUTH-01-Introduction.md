@@ -44,6 +44,8 @@ Lets have a look at how the framework looks from a user perspective with the age
 
 ## "Hello (World)" is it me you're looking for?...
 
+This would normally be split into separate files but for demonstrative purposes (...and also cause im SUPER LAZY), I've thrown it all into one code block and you'll just have to make believe while I explain the different parts.
+
 ```javascript
 import { JSX, FuchsiaFactory, useApplication, createModule } from "@fuchsiajs/core";
 import { Controller, Route } from "@fuchsiajs/common";
@@ -100,7 +102,7 @@ things not shown in example:
 + create a way to add global and scoped middleware (not use in the example).
 
 
-This would normally be split into separate files but for demonstrative purposes (...and also cause im SUPER LAZY), I've thrown it all into one code block and you'll just have to make believe while I explain the different parts.
+
 
 
 ## Imports
