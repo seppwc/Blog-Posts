@@ -73,29 +73,11 @@ relative import paths make everything so much more annoying, not only when we wa
 structure when we prefix another "../" to the path but depending on how far you nest your components it can get much much worse eg
 
 
-```bash
-
-/components
-  /form
-    /inputs
-      /text
-         textInput.tsx
-         textInput.module.css
-      /dropdown
-         textInput.tsx
-         textInput.module.css
-      /toggle
-         textInput.tsx
-         textInput.module.css
-```
-
-would end up
-
 ```javascript
 
 // src/layouts/storeLayout.tsx
 
-import {textInput} from '../../components/form/inputs/text'  
+import {thatOneComponent} from '../../../../foo/bar/bar'  
 
 ```
 
