@@ -1,4 +1,4 @@
-# How to add path alias' in GatsbyJS and Typescript
+# How to add path aliases in GatsbyJS and Typescript
 
 
 Like many developers I regularly find myself trying to organise my projects folder structures to make it very clear where everything is, which usually ends with my project folder looking something similar to this:
@@ -69,8 +69,7 @@ import {navbar} from '../../components/navbar'
 
 ```
 
-relative import paths make everything so much more annoying, not only when we want to import something, do we have to do some mental gymnastics to understand where exactly we are in the folder
-structure when we prefix another "../" to the path but depending on how far you nest your components it can get much much worse eg
+relative import paths make everything so much more annoying, not only when we want to import something, do we have to do some mental gymnastics to understand where exactly we are in the folder structure each time we prefix another "../" to the path, but depending on how far you nest your components it can get much much worse eg
 
 
 ```javascript
@@ -82,7 +81,7 @@ import {thatOneComponent} from '../../../../foo/bar/bar'
 you can fix some of it with adding index.ts in each folder and re exporting components but it gets very unweildy quickly
 
 
-A good solution i found was to use typescript path alias, which mean we can declare out imports like this
+A good solution I found was to use typescript path alias (there are also bundler specific plugins if not using typescript), which mean we can declare out imports like this
 
 ```javascript
 
@@ -94,13 +93,11 @@ we dont have to think about relative imports, we say "from the components folder
 
 ```javascript
 
-// src/layouts/storeLayout.tsx
-
 import {thatOneComponent} from '@components'  
 
 ```
 
-muuch better and its super simple to implement
+muuch better and its super simple to implement using typescript!
 
 ```json
   // tsconfig.json
@@ -128,33 +125,32 @@ broken down
 ### baseUrl
 this sets the base directory to resolve non-absolute module names
 
-in our example we set it to `"src" so typescript will look in src directory for any paths not resolve with an absolute path eg prefixed with "./" or "../"
+in our example we set it to `"src"` so typescript will look in src directory for any paths not resolve with an absolute path eg prefixed with "./" or "../"
 
 ### paths 
 tsc defines this as "A Series of entires which re-map to lookup locations relative to the baseUrl"
 
-which translates to as: an object where the keys are the paths you will use, and the values are what that will resolve to when typescript sees it
+which translates to as: an object where the keys are the paths you will use, and the values are what that will resolve to when typescript sees it (from the baseUrl location)
 
-in out example we have five folders declared `components`, `assets`, `hooks`, `images` and `layouts` weve prefixed out custom alias' with an `@` to make it clear this is a custom alias
-and not a node_module (this is purely for future you and other developers!) this can be any symbol `@` just seems to be the convension used, in our keys we also suffix them with a `/*`,
-this is so any nested folders are also included.
+in out example we have five folders declared `components`, `assets`, `hooks`, `images` and `layouts` weve prefixed our custom aliases with an `@` to make it clear this is a custom alias and not a node_module, this is purely for future you sake and the sanity of any other developers you work with! This can be any symbol `@` just seems to be the convension used, in our keys we also suffix them with a `/*`, this is so any nested folders are also included.
 
-and in a pure typescript project that is all you need to do.
+and in a pure typescript project that is all you need to do. WOW!
 
 
 ## What about in Gatsby?
 
-we gatsby uses typescript by default where all you need is a tsconfig file and to rename your files to `.ts` and `.tsx` and you can enjoy the brillant world of typescript.
+Well... gatsby uses typescript by default so all you need is a tsconfig file and to rename your files to `.ts` and `.tsx` and you can enjoy the brillant world of typescript.
 
-the one issue is when using typescripts path alias in gatsby developement environment (theres always a catch!) to resolve this we have to do what we already do when we have an issue with gatsby...
+The one issue though,  is when using typescripts path aliases in gatsby developement environment (theres always a catch!). T
 
-#### download a plugin!
+o resolve this we have to do what we already do when we have an issue with gatsby...
+
+#### install a plugin!
 
 
 ### gatsby-plugin-root-import
 
-this set you can use even without typescript so everyone is happy! but if using typescript you will need to do both to make both gatsby and tsc happy (but thats what you get for tring to people please!)
-
+You can use this plugin even without typescript so everyone is happy! but if using typescript you will need to do both to make both gatsby and tsc happy (but thats what you get for trying to people please!)
 
 first of all install it...
 ```bash
@@ -185,7 +181,8 @@ then add a config object to your gatsby-config.js
   }
 ```
 
-this one is structured a bit differently, first of, we dont declare a root url to work from, we will have to use nodes `path` module along with the `__dirname` global variable to resolve the paths to correct folders,
+this one is structured a bit differently, first of, we dont declare a root url to work from, we will have to make use of nodes `path` module along with the `__dirname` global variable to resolve the paths to correct folders.
+
 we also dont need to suffix a "/*" if we wish to use nested folder as it will just replace `@components` with `<path_to_root>/src/components` so `@components/navbar` will get resolved as 
 `<path_to_root>/src/components/navbar`
 
