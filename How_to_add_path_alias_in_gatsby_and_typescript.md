@@ -75,8 +75,6 @@ structure when we prefix another "../" to the path but depending on how far you 
 
 ```javascript
 
-// src/layouts/storeLayout.tsx
-
 import {thatOneComponent} from '../../../../foo/bar/bar'  
 
 ```
@@ -88,9 +86,7 @@ A good solution i found was to use typescript path alias, which mean we can decl
 
 ```javascript
 
-// src/layouts/storeLayout.tsx
-
-import {textInput} from '@components/form/inputs/text'  
+import {thatOneComponent} from '@components/foo/bar/bar'  
 
 ```
 
@@ -100,7 +96,7 @@ we dont have to think about relative imports, we say "from the components folder
 
 // src/layouts/storeLayout.tsx
 
-import {textInput} from '@components'  
+import {thatOneComponent} from '@components'  
 
 ```
 
