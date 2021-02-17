@@ -18,7 +18,6 @@ myProject/
         header/
           header.module.css
           header.tsx
-          index.ts
         navbar/
           navbar.module.tsx
           navbar.tsx
@@ -213,6 +212,8 @@ we also dont need to suffix a "/*" if we wish to use nested folder as it will ju
 `<path_to_root>/src/components/navbar`
 
 and thats it!
+
+now go forth and never have to be bothered by aweful relative imports ever again!
 
 if you found this helpful or have any amendments let me know on twitter im @phl3bas
 
